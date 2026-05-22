@@ -1,0 +1,18 @@
+Package: homa2calc
+Title: HOMA2 Insulin Resistance and Beta-Cell Function Calculator
+Version: 0.1.0
+Authors@R: 
+    person("Your", "Name", email = "you@example.com", role = c("aut", "cre"))
+Description: Computes HOMA2 %B (beta-cell function), HOMA2 %S (insulin
+    sensitivity), and HOMA2-IR using bilinear interpolation over reference
+    tables derived from the HOMA2 Calculator v2.2.4 validation dataset
+    (Diabetes Trials Unit, University of Oxford). Supports three input modes:
+    non-specific insulin, specific (proinsulin-free) insulin, and C-peptide.
+    Works on any platform including Linux HPC environments.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.0
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
