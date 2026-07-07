@@ -1,6 +1,6 @@
 # homa2calc
 
-An R package for computing **HOMA2 %B**, **HOMA2 %S**, and **HOMA2-IR** — the
+An R package for computing **HOMA2 %B**, **HOMA2 %S**, and **HOMA2-IR** from the
 Oxford Diabetes Trials Unit model of steady-state beta-cell function and insulin
 resistance.
 
@@ -12,14 +12,11 @@ of Oxford. This package implements HOMA2 via bilinear interpolation over
 reference tables extracted from the **HOMA2 Calculator v2.2.4 validation
 dataset**. Grid-point values match the official DTU calculator exactly.
 
-Works on all platforms including Linux HPC clusters (no compiled binary
-required).
-
 ## Installation
 
 ```r
 # Install from GitHub
-remotes::install_github("yourusername/homa2calc")
+remotes::install_github("ZanettaT/homa2calc")
 ```
 
 ## Usage
@@ -54,7 +51,6 @@ homa2_insulin(glucose = 5.0, insulin = 60)
 #   homa2_b homa2_s homa2_ir
 # 1   131.9    92.8    1.077
 
-# Vectorised — typical DPP usage:
 # i000 is in µU/mL; convert to pmol/L by × 6 for standard RIA
 dpp <- dpp %>%
   mutate(
@@ -79,9 +75,9 @@ dpp <- dpp %>%
 
 | Column | Description |
 |---|---|
-| `homa2_b` | Beta-cell function (%). Normal = 100%. |
-| `homa2_s` | Insulin sensitivity (%). Normal = 100%. |
-| `homa2_ir` | Insulin resistance index = 100 / %S. Normal ≈ 1.0. |
+| `homa2_b` | Beta-cell function (%)|
+| `homa2_s` | Insulin sensitivity (%)|
+| `homa2_ir` | Insulin resistance index = 100 / %S|
 
 Values outside the valid input range are returned as `NA`.
 
@@ -98,10 +94,5 @@ homa2_cpeptide(3.0, 0.2) # %B=151.8, %S=272.6
 ```
 
 ## References
-
-- Levy JC, Matthews DR, Hermans MP. Correct homeostasis model assessment (HOMA)
-  evaluation uses the computer program. *Diabetes Care*. 1998;21(12):2191–2.
-- Wallace TM, Levy JC, Matthews DR. Use and abuse of HOMA modeling.
-  *Diabetes Care*. 2004;27(6):1487–95.
 - HOMA2 Calculator v2.2.4, Diabetes Trials Unit, University of Oxford.
   <https://www.dtu.ox.ac.uk/homacalculator/>
