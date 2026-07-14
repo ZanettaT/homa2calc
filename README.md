@@ -49,7 +49,7 @@ library(homa2calc)
 # Single observation
 homa2_insulin(glucose = 5.0, insulin = 60)
 #   homa2_b homa2_s homa2_ir
-# 1   131.9    92.8    1.077
+# 1   105.6    90.1    1.109
 
 # i000 is in µU/mL; convert to pmol/L by × 6 for standard RIA
 dpp <- dpp %>%
